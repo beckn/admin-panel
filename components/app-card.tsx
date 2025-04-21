@@ -25,7 +25,7 @@ export function AppCard({ app }: AppCardProps) {
     <Card className="overflow-hidden">
       <CardHeader className="p-0">
         <div className="h-32 bg-gradient-to-r from-[#d4dfe8] to-[#77AEDE] flex items-center justify-center">
-          <div className="bg-white rounded-full p-1">
+          <div className="bg-white rounded-full p-1 h-[88px] w-[88px] flex">
             <Image
               src={
                 app.logo ||
@@ -39,7 +39,7 @@ export function AppCard({ app }: AppCardProps) {
           </div>
         </div>
       </CardHeader>
-      <CardContent className="p-6">
+      <CardContent className="p-6" style={{ minHeight: "148px" }}>
         <div className="flex justify-between items-start mb-2">
           <div>
             <h3 className="text-xl font-bold">{app.name}</h3>
