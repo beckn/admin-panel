@@ -15,34 +15,37 @@ export default function Dashboard() {
     {
       id: 1,
       name: "Spark App",
-      description: "Electric vehicle charging application",
-      logo: "https://experience-dev.becknprotocol.io/assets/open-spark.svg",
+      description: "A platform for managing and locating EV charging stations.",
+      logo: "https://opensparkv2-dev.becknprotocol.io/images/Spark.svg",
       lastModified: "2 days ago",
       url: "https://opensparkv2-dev.becknprotocol.io/",
     },
     {
       id: 2,
-      name: "EB Charging",
-      description: "Energy management platform",
+      name: "EV Charging",
+      description:
+        "A comprehensive energy management and EV charging interface.",
       logo: "https://experience-dev.becknprotocol.io/assets/open-spark.svg",
       lastModified: "5 days ago",
       url: "https://opensparkv2-dev.becknprotocol.io/",
     },
     {
       id: 3,
-      name: "EB Charging",
-      description: "Energy management platform",
-      logo: "https://experience-dev.becknprotocol.io/assets/open-spark.svg",
+      name: "Wallet",
+      description:
+        "A secure digital wallet for managing EV credits and transactions.",
+      logo: "https://unified-wallet-dev.becknprotocol.io/images/app_name.svg",
       lastModified: "5 days ago",
-      url: "https://opensparkv2-dev.becknprotocol.io/",
+      url: "https://unified-wallet-dev.becknprotocol.io/",
     },
     {
       id: 4,
-      name: "EB Charging",
-      description: "Energy management platform",
-      logo: "https://experience-dev.becknprotocol.io/assets/open-spark.svg",
+      name: "Finance",
+      description:
+        "A financial dashboard for monitoring usage, billing, and reports.",
+      logo: "https://experience-dev.becknprotocol.io/assets/money_bag.svg",
       lastModified: "5 days ago",
-      url: "https://opensparkv2-dev.becknprotocol.io/",
+      url: "https://lendease-dev.becknprotocol.io/",
     },
   ];
 
@@ -58,37 +61,6 @@ export default function Dashboard() {
         </Button>
       </div>
 
-      {/* <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle>Total Apps</CardTitle>
-            <CardDescription>Your reference applications</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold">{apps.length}</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle>Active Users</CardTitle>
-            <CardDescription>Across all applications</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold">1,284</div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader className="pb-2">
-            <CardTitle>Configurations</CardTitle>
-            <CardDescription>Changes made this month</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="text-3xl font-bold">24</div>
-          </CardContent>
-        </Card>
-      </div> */}
-
-      {/* <h2 className="text-2xl font-bold mt-6 mb-4">Your Applications</h2> */}
       <div className="grid gap-6 md:grid-cols-3 sm:grid-cols-2">
         {apps.map((app) => (
           <AppCard key={app.id} app={app} />
