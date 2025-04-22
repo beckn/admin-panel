@@ -8,6 +8,7 @@ import { CartForm } from "@/components/cart-form";
 import { ProductDisplayForm } from "@/components/product-display-form";
 import { ShippingForm } from "@/components/shipping-form";
 import { OrderManagementForm } from "@/components/order-management-form";
+import { UserManagementForm } from "@/components/user-management-form";
 
 export default function ConfigurePage() {
   const params = useParams();
@@ -136,6 +137,54 @@ export default function ConfigurePage() {
         },
       ],
     },
+    userManagement: {
+      authentication: {
+        enable2FA: true,
+        enableSocialLogin: true,
+        sessionTimeout: 30,
+        maxLoginAttempts: 5,
+        passwordPolicy: {
+          minLength: 8,
+          requireUppercase: true,
+          requireNumbers: true,
+          requireSpecialChars: true
+        }
+      },
+      profileFields: [
+        { key: "firstName", label: "First Name", required: true, enabled: true },
+        { key: "lastName", label: "Last Name", required: true, enabled: true },
+        { key: "email", label: "Email", required: true, enabled: true },
+        { key: "phone", label: "Phone", required: true, enabled: true },
+        { key: "address", label: "Address", required: false, enabled: true },
+        { key: "company", label: "Company", required: false, enabled: true },
+        { key: "position", label: "Position", required: false, enabled: true }
+      ],
+      verification: {
+        emailVerification: true,
+        phoneVerification: true,
+        documentVerification: false
+      },
+      roles: [
+        {
+          key: "admin",
+          label: "Administrator",
+          permissions: ["all"],
+          enabled: true
+        },
+        {
+          key: "manager",
+          label: "Manager",
+          permissions: ["view", "edit", "create"],
+          enabled: true
+        },
+        {
+          key: "user",
+          label: "User",
+          permissions: ["view"],
+          enabled: true
+        }
+      ]
+    }
   };
 
   return (
@@ -158,6 +207,7 @@ export default function ConfigurePage() {
           <TabsTrigger value="shipping">Shipping</TabsTrigger>
           <TabsTrigger value="payments">Payments</TabsTrigger>
           <TabsTrigger value="orders">Orders</TabsTrigger>
+          <TabsTrigger value="users">Users</TabsTrigger>
         </TabsList>
 
         <TabsContent value="branding" className="space-y-4">
@@ -186,6 +236,10 @@ export default function ConfigurePage() {
 
         <TabsContent value="orders" className="space-y-4">
           <OrderManagementForm appData={appData} />
+        </TabsContent>
+
+        <TabsContent value="users" className="space-y-4">
+          <UserManagementForm appData={appData} />
         </TabsContent>
       </Tabs>
     </div>
